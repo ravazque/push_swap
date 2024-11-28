@@ -6,7 +6,7 @@
 /*   By: ravazque <ravazque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:12:30 by ravazque          #+#    #+#             */
-/*   Updated: 2024/11/28 15:24:14 by ravazque         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:50:07 by ravazque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,37 @@ void	rrr(t_stack **stack_a, t_stack **stack_b)
 
 //-----------------------------------------------------------
 
+void insertar_al_final(t_stack **stack, int value)
+{
+    t_stack *nuevo;
+    t_stack *temp;
+
+    nuevo = (t_stack *)malloc(sizeof(t_stack));
+    if (!nuevo)
+        return ;
+    nuevo->value = value;
+    nuevo->next = NULL;
+    if (!*stack)
+    {
+        *stack = nuevo;
+        return ;
+    }
+    temp = *stack;
+    while (temp->next)
+        temp = temp->next;
+    temp->next = nuevo;
+}
+
+void imprimir_lista(t_stack *stack)
+{
+    while (stack)
+    {
+        printf("%d -> ", stack->value);
+        stack = stack->next;
+    }
+    printf("NULL\n");
+}
+
 // ------------------------ main ----------------------------
 
 int	main(int argc, char **argv)
@@ -174,7 +205,7 @@ int	main(int argc, char **argv)
 	i = 1;
 	if (argc < 2)
 	{
-		printf("Uso: %s <valores>\n", argv[0]);
+		printf("Uso: %s <valuees>\n", argv[0]);
 		return (1);
 	}
 	while (i < argc)
@@ -182,47 +213,49 @@ int	main(int argc, char **argv)
 		insertar_al_final(&stack_a, atoi(argv[i]));
 		i++;
 	}
-	printf("\nPila A inicial:\n");
-	imprimir_lista(stack_a);
-	printf("Pila B inicial:\n");
-	imprimir_lista(stack_b);
-	printf("\n--- Ejecutando sa (swap A) ---\n");
-	sa(&stack_a);
-	imprimir_lista(stack_a);
-	printf("\n--- Ejecutando sb (swap B) ---\n");
-	sb(&stack_b);
-	imprimir_lista(stack_b);
-	printf("\n--- Ejecutando ss (swap A y B simultáneo) ---\n");
-	ss(&stack_a, &stack_b);
-	imprimir_lista(stack_a);
-	imprimir_lista(stack_b);
-	printf("\n--- Ejecutando pb (push A a B) ---\n");
-	pb(&stack_a, &stack_b);
-	imprimir_lista(stack_a);
-	imprimir_lista(stack_b);
-	printf("\n--- Ejecutando pa (push B a A) ---\n");
-	pa(&stack_a, &stack_b);
-	imprimir_lista(stack_a);
-	imprimir_lista(stack_b);
-	printf("\n--- Ejecutando ra (rotate A) ---\n");
-	ra(&stack_a);
-	imprimir_lista(stack_a);
-	printf("\n--- Ejecutando rb (rotate B) ---\n");
-	rb(&stack_b);
-	imprimir_lista(stack_b);
-	printf("\n--- Ejecutando rr (rotate A y B simultáneo) ---\n");
-	rr(&stack_a, &stack_b);
-	imprimir_lista(stack_a);
-	imprimir_lista(stack_b);
-	printf("\n--- Ejecutando rra (reverse rotate A) ---\n");
-	rra(&stack_a);
-	imprimir_lista(stack_a);
-	printf("\n--- Ejecutando rrb (reverse rotate B) ---\n");
-	rrb(&stack_b);
-	imprimir_lista(stack_b);
-	printf("\n--- Ejecutando rrr (reverse rotate A y B simultáneo) ---\n");
-	rrr(&stack_a, &stack_b);
-	imprimir_lista(stack_a);
-	imprimir_lista(stack_b);
-	return (0);
+	
+	// printf("\n--------------------------\nPila A inicial:\n- ");
+	// imprimir_lista(stack_a);
+	// printf("\nPila B inicial:\n- ");
+	// imprimir_lista(stack_b);
+	// printf("--------------------------\n\n- Ejecutando sa (swap A) -\n");
+	// sa(&stack_a);
+	// imprimir_lista(stack_a);
+	// printf("\n- Ejecutando sb (swap B) ---\n");
+	// sb(&stack_b);
+	// imprimir_lista(stack_b);
+	// printf("\n- Ejecutando ss (swap A y B simultáneo) -\n");
+	// ss(&stack_a, &stack_b);
+	// imprimir_lista(stack_a);
+	// imprimir_lista(stack_b);
+	// printf("\n- Ejecutando pb (push A a B) -\n");
+	// pb(&stack_a, &stack_b);
+	// imprimir_lista(stack_a);
+	// imprimir_lista(stack_b);
+	// printf("\n- Ejecutando pa (push B a A) -\n");
+	// pa(&stack_a, &stack_b);
+	// imprimir_lista(stack_a);
+	// imprimir_lista(stack_b);
+	// printf("\n- Ejecutando ra (rotate A) -\n");
+	// ra(&stack_a);
+	// imprimir_lista(stack_a);
+	// printf("\n- Ejecutando rb (rotate B) -\n");
+	// rb(&stack_b);
+	// imprimir_lista(stack_b);
+	// printf("\n- Ejecutando rr (rotate A y B simultáneo) -\n");
+	// rr(&stack_a, &stack_b);
+	// imprimir_lista(stack_a);
+	// imprimir_lista(stack_b);
+	// printf("\n- Ejecutando rra (reverse rotate A) -\n");
+	// rra(&stack_a);
+	// imprimir_lista(stack_a);
+	// printf("\n- Ejecutando rrb (reverse rotate B) -\n");
+	// rrb(&stack_b);
+	// imprimir_lista(stack_b);
+	// printf("\n- Ejecutando rrr (reverse rotate A y B simultáneo) -\n");
+	// rrr(&stack_a, &stack_b);
+	// imprimir_lista(stack_a);
+	// imprimir_lista(stack_b);
+	// return (0);
+	
 }
