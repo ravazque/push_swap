@@ -6,7 +6,7 @@
 /*   By: ravazque <ravazque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:07:23 by ravazque          #+#    #+#             */
-/*   Updated: 2024/11/28 15:17:54 by ravazque         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:56:23 by ravazque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-//---------------------------------------------------------------------
 
 typedef struct s_stack
 {
