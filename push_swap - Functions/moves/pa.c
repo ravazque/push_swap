@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ravazque <ravazque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 17:41:56 by ravazque          #+#    #+#             */
-/*   Updated: 2024/12/04 21:56:40 by ravazque         ###   ########.fr       */
+/*   Created: 2024/12/04 21:43:29 by ravazque          #+#    #+#             */
+/*   Updated: 2024/12/04 21:47:28 by ravazque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	push_swap(t_stack **stack_a, t_stack **stack_b)
+void	pa(t_stack **stack_a, t_stack **stack_b)
 {
-	int	size;
-	
-	size = ft_lstsize(stack_a);
-	assign_idx(size, stack_a);
+	t_stack	*temp;
+
+	if (!stack_b || !(*stack_b))
+		return ;
+	temp = *stack_b;
+	*stack_b = (*stack_b)->next;
+	temp->next = *stack_a;
+	*stack_a = temp;
 }

@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   rr.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ravazque <ravazque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 17:41:56 by ravazque          #+#    #+#             */
-/*   Updated: 2024/12/04 21:56:40 by ravazque         ###   ########.fr       */
+/*   Created: 2024/12/04 21:43:45 by ravazque          #+#    #+#             */
+/*   Updated: 2024/12/04 21:47:20 by ravazque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	push_swap(t_stack **stack_a, t_stack **stack_b)
+void	rr(t_stack **stack_a, t_stack **stack_b)
 {
-	int	size;
-	
-	size = ft_lstsize(stack_a);
-	assign_idx(size, stack_a);
+	ra(stack_a);
+	rb(stack_b);
 }

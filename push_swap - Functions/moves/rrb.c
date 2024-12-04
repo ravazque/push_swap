@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   rrb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ravazque <ravazque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 17:41:56 by ravazque          #+#    #+#             */
-/*   Updated: 2024/12/04 21:56:40 by ravazque         ###   ########.fr       */
+/*   Created: 2024/12/04 21:43:50 by ravazque          #+#    #+#             */
+/*   Updated: 2024/12/04 21:47:17 by ravazque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	push_swap(t_stack **stack_a, t_stack **stack_b)
+void	rrb(t_stack **stack_b)
 {
-	int	size;
-	
-	size = ft_lstsize(stack_a);
-	assign_idx(size, stack_a);
+	t_stack	*last;
+	t_stack	*previous;
+
+	if (!stack_b || !(*stack_b) || !(*stack_b)->next)
+		return ;
+	last = *stack_b;
+	previous = NULL;
+	while (last->next)
+	{
+		previous = last;
+		last = last->next;
+	}
+	previous->next = NULL;
+	last->next = *stack_b;
+	*stack_b = last;
 }

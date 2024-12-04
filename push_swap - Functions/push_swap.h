@@ -6,17 +6,20 @@
 /*   By: ravazque <ravazque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:07:23 by ravazque          #+#    #+#             */
-/*   Updated: 2024/11/28 15:56:23 by ravazque         ###   ########.fr       */
+/*   Updated: 2024/12/04 21:55:42 by ravazque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <limits.h>
-# include <stdbool.h>
+# include "_libft/libft.h"
+# include "_printf/ft_printf.h"
+
+# include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
 # include <unistd.h>
 
 typedef struct s_stack
@@ -27,8 +30,16 @@ typedef struct s_stack
 
 //---------------------------------------------------------------------
 
-t_stack				*crear_nodo(int valor);
-void				insertar_al_final(t_stack **head, int valor);
+void				push_swap(t_stack **stack_a, t_stack **stack_b);
+void				assign_idx(int size, t_stack **stack_a);
+int					*array_pass(t_stack **stack_a, int size);
+int					*bubble_sh(int *num_ord, int size);
+void				idx_place(t_stack **stack_a, int size, int *num_ord, int *num_orig);
+
+//---------------------------------------------------------------------
+
+t_stack				*crear_nodo(int value);
+void				insertar_al_final(t_stack **head, int value);
 void				imprimir_lista(t_stack *head);
 
 void				sa(t_stack **stack_a);
@@ -49,3 +60,4 @@ void				rrr(t_stack **stack_a, t_stack **stack_b);
 #endif
 
 //---------------------------------------------------------------------
+
