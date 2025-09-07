@@ -6,7 +6,7 @@
 /*   By: ravazque <ravazque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:43:52 by ravazque          #+#    #+#             */
-/*   Updated: 2025/06/26 18:12:44 by ravazque         ###   ########.fr       */
+/*   Updated: 2025/09/07 18:08:21 by ravazque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
-	rra(stack_a);
-	rrb(stack_b);
 	write(1, "rrr\n", 4);
 }
+
+// unnecessary movement with this sorting algorithm

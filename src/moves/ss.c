@@ -6,7 +6,7 @@
 /*   By: ravazque <ravazque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:43:59 by ravazque          #+#    #+#             */
-/*   Updated: 2025/06/26 18:12:53 by ravazque         ###   ########.fr       */
+/*   Updated: 2025/09/07 18:08:12 by ravazque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
 {
-	sa(stack_a);
-	sb(stack_b);
 	write(1, "ss\n", 3);
 }
+
+// unnecessary movement with this sorting algorithm
