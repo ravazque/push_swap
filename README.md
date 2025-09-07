@@ -132,15 +132,15 @@ push_swap/
 │  ├─┬─ moves/
 │  │ └── *.c                       # All element movement functions
 │  ├─┬─ ps_utils/
-│  │ ├── ft_assing_index.c         # -
-│  │ ├── ft_atoi.c                 # -
-│  │ ├── ft_check_ordered.c        # -
-│  │ ├── lists.c                   # -
-│  │ └── nodes.c                   # -
+│  │ ├── ft_assing_index.c         # Assign an index to integers
+│  │ ├── ft_atoi.c                 # Modified libft atoi
+│  │ ├── ft_check_ordered.c        # Check if it is organized
+│  │ ├── lists.c                   # List functions
+│  │ └── nodes.c                   # Nodes functions
 │  ├─┬─ sorters/
-│  │ ├── ft_simple_sort.c          # -
-│  │ ├── ksort.c                   # -
-│  │ └── mini_ksort.c              # - 
+│  │ ├── ft_simple_sort.c          # Comparison for reordering
+│  │ ├── ksort.c                   # Sorting algorithm
+│  │ └── mini_ksort.c              # First sortable cases
 │  └── push_swap.c                 # Main program entry point
 ├── Makefile                       # Compilation rules
 └── README.md                      # Project documentation
