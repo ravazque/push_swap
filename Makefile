@@ -1,6 +1,6 @@
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3 -Iinclude
+CFLAGS = -Wall -Wextra -Werror -Iinclude
 
 NAME = push_swap
 
